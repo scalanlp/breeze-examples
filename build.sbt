@@ -1,6 +1,4 @@
 import AssemblyKeys._ // put this at the top of the file
-import de.johoop.jacoco4sbt._
-import JacocoPlugin._
 
 name := "breeze-examples"
 
@@ -19,9 +17,9 @@ resolvers ++= Seq(
 
 libraryDependencies ++= Seq(
   "junit" % "junit" % "4.5" % "test",
-  "org.scalanlp" %% "breeze-math" % "0.1-SNAPSHOT",
-  "org.scalanlp" %% "breeze-process" % "0.1-SNAPSHOT",
-  "org.scalanlp" %% "breeze-learn" % "0.1-SNAPSHOT",
+  "org.scalanlp" %% "breeze-math" % "0.2-SNAPSHOT",
+  "org.scalanlp" %% "breeze-process" % "0.2-SNAPSHOT",
+  "org.scalanlp" %% "breeze-learn" % "0.2-SNAPSHOT",
   "com.github.scala-incubator.io" %% "scala-io-core" % "0.4.0"
 )
 
@@ -46,6 +44,3 @@ javaOptions += "-Xmx2g"
 
 
 seq(assemblySettings: _*)
-
-
-seq(jacoco.settings : _*)
