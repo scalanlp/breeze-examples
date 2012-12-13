@@ -19,6 +19,8 @@ libraryDependencies ++= Seq(
   "junit" % "junit" % "4.5" % "test",
   "org.scalanlp" %% "breeze-math" % "0.2-SNAPSHOT",
   "org.scalanlp" %% "breeze-process" % "0.2-SNAPSHOT",
+  "org.scalanlp" %% "breeze-core" % "0.2-SNAPSHOT",
+  "org.scalanlp" %% "breeze-viz" % "0.2-SNAPSHOT",
   "org.scalanlp" %% "breeze-learn" % "0.2-SNAPSHOT",
   "com.github.scala-incubator.io" %% "scala-io-core" % "0.4.0"
 )

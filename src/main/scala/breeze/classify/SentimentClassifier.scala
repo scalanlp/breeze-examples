@@ -71,7 +71,7 @@ object SentimentClassifier {
     // we have, and then one to build the vectors.
     def extractFeatures(ex: Example[Int, IndexedSeq[String]]) =  {
       ex.map { words =>
-        val builder = new SparseVector.Builder[Double](Int.MaxValue)
+        val builder = new VectorBuilder[Double](Int.MaxValue)
         for(w <- words) {
           val fi = featureIndex.index(WordFeature(w))
           val si = featureIndex.index(StemFeature(stemmer(w)))
@@ -87,8 +87,8 @@ object SentimentClassifier {
     // get the resulting sparsevector
     val extractedData: IndexedSeq[Example[Int, SparseVector[Double]]] = data.map(extractFeatures).map{ex =>
       ex.map{ builder =>
-        builder.dim = featureIndex.size
-        builder.result()
+        builder.length = featureIndex.size
+        builder.toSparseVector
       }
     }
 
