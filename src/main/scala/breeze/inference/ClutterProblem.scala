@@ -76,8 +76,8 @@ object ClutterProblem {
     }
 
     def project(q: ApproxFactor, point: Double) = {
-      val pdfNoise = Gaussian(0, v_noise).pdf(point)
-      val Z_n = (1-w) * Gaussian(q.m, q.v + 1).pdf(point) + w * pdfNoise
+      val pdfNoise = Gaussian(0, math.sqrt(v_noise)).pdf(point)
+      val Z_n = (1-w) * Gaussian(q.m, math.sqrt(q.v + 1)).pdf(point) + w * pdfNoise
       val r_n = 1 - w/Z_n * pdfNoise
       val m = q.m + r_n * q.v/(q.v+ 1) * (point - q.m)
       val v = (
@@ -93,7 +93,7 @@ object ClutterProblem {
     val trueMu = 2
     val gen = for {
       notNoise <- new Bernoulli(1 - w)
-      x <- Gaussian(I(notNoise) * trueMu, if(notNoise) 1 else v_noise)
+      x <- Gaussian(I(notNoise) * trueMu, if(notNoise) 1 else math.sqrt(v_noise))
     } yield x
 
     val data = gen.sample(1000)
