@@ -2,7 +2,7 @@ import AssemblyKeys._ // put this at the top of the file
 
 name := "breeze-examples"
 
-version := "0.5.2"
+version := "0.6-SNAPSHOT"
 
 organization := "org.scalanlp"
 
@@ -17,10 +17,10 @@ resolvers ++= Seq(
 
 libraryDependencies ++= Seq(
   "junit" % "junit" % "4.5" % "test",
-  "org.scalanlp" %% "breeze" % "0.5.2",
+  "org.scalanlp" %% "breeze" % "0.6-SNAPSHOT",
   "org.scalanlp" % "chalk" % "1.3.0" intransitive(),
   "org.scalanlp" % "nak" % "1.2.0" intransitive(),
-  "org.scalanlp" %% "breeze-viz" % "0.5.2"
+  "org.scalanlp" %% "breeze-viz" % "0.5.2" exclude("org.scalanlp", "breeze_2.10")
 )
 
 
