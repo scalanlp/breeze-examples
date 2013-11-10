@@ -2,6 +2,7 @@ package breeze.inference
 
 import breeze.stats.distributions.{Bernoulli, Gaussian}
 import breeze.numerics._
+import nak.inference._
 
 
 /**

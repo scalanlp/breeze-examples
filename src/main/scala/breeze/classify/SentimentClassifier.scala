@@ -3,12 +3,13 @@ package breeze.classify
 import java.io.File
 import breeze.config.{GenerateHelp, Help, CommandLineParser}
 import io.Source
-import breeze.data.Example
+import nak.data.Example
 import breeze.util.Index
 import breeze.linalg._
-import breeze.stats.ContingencyStats
+import nak.stats.ContingencyStats
 import breeze.optimize.FirstOrderMinimizer.OptParams
 import collection.mutable.ArrayBuffer
+import nak.classify.LogisticClassifier
 
 /**
  * Example showing how to build a simple sentiment classifier
@@ -42,7 +43,7 @@ object SentimentClassifier {
     }
 
     // get a tokenizer and a stemmer.
-    val langData = breeze.text.LanguagePack.English
+    val langData = chalk.text.LanguagePack.English
     val tokenizer = langData.simpleTokenizer
     val stemmer = langData.stemmer.getOrElse(identity[String] _)
 

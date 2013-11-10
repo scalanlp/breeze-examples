@@ -4,7 +4,7 @@ import breeze.plot._
 import io.Source
 import breeze.numerics._
 import java.awt.{Color, Paint}
-import breeze.stats.ContingencyStats
+import nak.stats.ContingencyStats
 
 
 /**
